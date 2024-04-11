@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import ModifiedHeader from './ModifiedHeader'
 
 const Browse = () => {
     return (
-        <div>
-            Browse
-        </div>
+        <>
+            <ModifiedHeader />
+        </>
     )
 }
 
