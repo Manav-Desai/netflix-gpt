@@ -20,7 +20,7 @@ const Header = () => {
             dispatch(removeUser());
 
         }).catch((error) => {
-            console.log(error);
+            // console.log(error);
         });
     }
 
@@ -35,7 +35,7 @@ const Header = () => {
             dispatch(addUser({ uid : uid , email : email , displayName : displayName}));
 
             // if the user data is found it means it is already loggin in so redirects him to browse page
-            console.log("on auth state change : user not null");
+            // console.log("on auth state change : user not null");
             navigate("/browse");
 
         } else {
@@ -43,7 +43,7 @@ const Header = () => {
             dispatch(removeUser());
 
             // if the user signs out so redirects him to login page
-            console.log("on auth state change : user null");
+            // console.log("on auth state change : user null");
             navigate("/");
         }
         });

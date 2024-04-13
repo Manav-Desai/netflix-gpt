@@ -40,7 +40,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
                 // ...
             })
             .catch((error) => {
@@ -58,14 +58,14 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                console.log(user);
+                // console.log(user);
 
                 updateProfile(auth.currentUser, {
                     displayName: fullname.current.value
                   }).then(() => {
-                        console.log("Profile Updated Successfully");
+                        // console.log("Profile Updated Successfully");
                   }).catch((error) => {
-                        console.log(error);
+                        // console.log(error);
                   });
                 // ...
             })
