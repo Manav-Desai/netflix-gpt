@@ -14,8 +14,6 @@ const Login = () => {
     const email = useRef(null);
     const password = useRef(null);
     const fullname = useRef(null);
-
-    const navigate = useNavigate();
     
     function toggleSignInForm()
     {
@@ -43,7 +41,6 @@ const Login = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/browse");
                 // ...
             })
             .catch((error) => {
@@ -62,7 +59,14 @@ const Login = () => {
                 // Signed up 
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/browse");
+
+                updateProfile(auth.currentUser, {
+                    displayName: fullname.current.value
+                  }).then(() => {
+                        console.log("Profile Updated Successfully");
+                  }).catch((error) => {
+                        console.log(error);
+                  });
                 // ...
             })
             .catch((error) => {
@@ -74,13 +78,7 @@ const Login = () => {
             });
 
 
-            updateProfile(auth.currentUser, {
-                displayName: fullname.current.value
-              }).then(() => {
-                    console.log("Profile Updated Successfully");
-              }).catch((error) => {
-                    console.log(error);
-              });
+            
         }
     }
     
