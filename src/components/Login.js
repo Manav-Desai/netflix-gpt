@@ -5,6 +5,7 @@ import { checkValidateData } from '../utils/validate';
 import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword , signInWithEmailAndPassword , updateProfile} from 'firebase/auth';
 import { BG_URL } from '../utils/constants';
+import "../index.css";
 
 const Login = () => {
     
@@ -89,13 +90,13 @@ const Login = () => {
             <div className=' absolute'>
                 <img src={BG_URL} 
                 alt="background image" 
-                className=''/>
+                className='h-full w-full fixed object-cover'/>
             </div>
             
             <form
             onSubmit={(e) => {e.preventDefault()}}
 
-            className='absolute p-12 bg-black w-3/12 my-36 mx-auto left-0 right-0 text-white text-base rounded-xl bg-opacity-80'>
+            className='verysmall absolute p-12 bg-black my-36 mx-auto left-0 right-0 text-white text-base rounded-xl bg-opacity-80'>
                 <h1 className='font-bold text-3xl py-4'>
                      {issignin ? "Sign In" : "Sign Up"} 
                 </h1>
@@ -113,7 +114,7 @@ const Login = () => {
 
                 <button 
                 onClick={handleButtonClick}
-                className='p-4 my-6 bg-red-600 w-full rounded-md'>
+                className='p-4 my-6 bg-red-600 w-full rounded-md hover:bg-opacity-70'>
                     {issignin ? "Sign In" : "Sign Up"}
                 </button>
 

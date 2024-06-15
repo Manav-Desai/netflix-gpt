@@ -27,3 +27,9 @@ Added Features or components
 - Adding hardcoded value in the constants.js
 - Registered and made first call on TMDB
 - Adding GPT search feature
+- Getting Gemini Api key
+- GPT search feature added
+- Fetched suggested movies using TMDB ApiS
+- Memoization 
+- Added .env file for security of key
+- Making mobile responsive(in progress)

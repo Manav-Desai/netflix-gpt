@@ -75,11 +75,11 @@ const Header = () => {
 
     return (
 
-        <div className=" flex justify-between absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-full">
+        <div className=" flex flex-col justify-between absolute px-8 py-2 bg-gradient-to-b from-black z-10 w-full md:flex-row">
             <img
             src={LOGO}
             alt="Logo"
-            className="w-44"
+            className="w-44 mx-auto md:mx-0"
             />
             
             {
