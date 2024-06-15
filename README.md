@@ -26,3 +26,4 @@ Added Features or components
 - Unsubscribed to the onAuthStateChanged function by using return of useEffect in Header
 - Adding hardcoded value in the constants.js
 - Registered and made first call on TMDB
+- Adding GPT search feature

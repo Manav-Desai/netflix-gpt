@@ -6,11 +6,15 @@ import { useDispatch , useSelector} from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { onAuthStateChanged } from 'firebase/auth';
 import { LOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/GptSlice";
+import { SUPPORTED_LANGUAGES } from "../utils/languageConstants";
+import {changeLanguage} from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector( (store) => store.user );
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
     function handleLogout()
     {
@@ -22,6 +26,17 @@ const Header = () => {
         }).catch((error) => {
             // console.log(error);
         });
+    }
+
+    function handleLanguageChange(e)
+    {
+      dispatch(changeLanguage(e.target.value));
+    }
+
+    function handleGptSearchClick()
+    {
+      // Toggle GPT search
+      dispatch(toggleGptSearchView());
     }
 
     useEffect( () => {
@@ -69,8 +84,27 @@ const Header = () => {
             
             {
               user && (
-                <button className=" bg-red-500 rounded-lg text-white text-base w-20 h-8 my-4"
-                onClick={handleLogout}>Sign Out</button>
+                <div>
+                  
+                  { showGptSearch &&
+                      (<select className="text-base p-1 m-1 rounded-md bg-zinc-500 text-white" onChange={handleLanguageChange}>
+                      {
+                        SUPPORTED_LANGUAGES.map( (language) =>  
+                        <option key={language.identifier} value={language.identifier}>{language.name}</option>)
+                      }
+                      </select>)
+                  }
+
+                  <button className=" bg-green-500 rounded-lg text-white text-base w-24 h-8 my-4 mx-6"
+                  onClick={handleGptSearchClick}>
+                    {
+                      showGptSearch ? "Home" : "GptSearch"
+                    }
+                  </button>
+                  <button className=" bg-red-500 rounded-lg text-white text-base w-20 h-8 my-4"
+                  onClick={handleLogout}>Sign Out</button>
+                </div>
+                
               )
             }
             
