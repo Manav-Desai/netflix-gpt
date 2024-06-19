@@ -1,6 +1,6 @@
 # NetFlixGPT
 
-# Deployed at : https://netflix-gpt-eta-five.vercel.app/
+### Deployed at : https://netflix-gpt-eta-five.vercel.app/
 
 - First Commit
     - Setup of tailwindCss
