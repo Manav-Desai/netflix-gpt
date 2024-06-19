@@ -1,6 +1,6 @@
 # NetFlixGPT
 
-Note : Refer the documentation of firebase for all the code of libararies such as /firebase/auth , firebase.js etc. It is simply used from there . No additional logic is required
+# Deployed at : https://netflix-gpt-eta-five.vercel.app/
 
 - First Commit
     - Setup of tailwindCss
